@@ -21,7 +21,7 @@ class Plan
   end
 
   def index
-    "#{self.number}. #{self.place}旅行（¥#{self.price}）"
+    "#{@number}. #{@place}旅行（¥#{@price}）"
   end
 
 end

@@ -1,6 +1,6 @@
 class User
 
-  def choice(plans)
+  def number(plans)
     plan_number = gets.chomp.to_i
 
     while plan_number > plans.size || plan_number <= 0
@@ -9,7 +9,12 @@ class User
     end
 
     plan_choice = plans[plan_number - 1]
-    puts "#{plan_choice.place}ですね、何人で行きますか？"
+
+    return plan_choice
+  end
+
+  def member_sum(number)
+    puts "#{number.place}ですね、何人で行きますか？"
     member = gets.chomp.to_i
 
     while member <= 0
@@ -17,11 +22,17 @@ class User
       member = gets.chomp.to_i
     end
 
+    return member
+  end
+
+  def pay_sum(number, member)
+    puts "#{member}人ですね"
+
     if member >= 5
       puts "五人以上なので10%割引となります"
-      total_price = (plan_choice.price * member) * 90/100
+      total_price = (number.price * member) * 90/100
     else
-      total_price = plan_choice.price * member
+      total_price = number.price * member
      end
 
      puts "合計金額: #{total_price}円"
