@@ -1,5 +1,4 @@
 # メソッド課題
-require "pry"
 require_relative "plan"
 require_relative "user"
 
@@ -12,6 +11,6 @@ plans.each do |plan|
   puts plan.index
 end
 
-number =user.number(plans)
+number = user.number(plans)
 member = user.member_sum(number)
 user.pay_sum(number, member)
