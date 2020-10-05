@@ -14,14 +14,12 @@ class User
 
   def member_sum
     puts "#{@plan.place}ですね。何人で行きますか？"
-    member = gets.chomp.to_i
+    @member = gets.chomp.to_i
 
-    while member <= 0
+    while @member <= 0
       puts "人数は0人以上にしてください。"
-      member = gets.chomp.to_i
+      @member = gets.chomp.to_i
     end
-
-    @member = member
   end
 
   def pay_sum
